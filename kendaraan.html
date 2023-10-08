@@ -88,27 +88,65 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.js" integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
         var options = {
-          series: [96729, 3892, 257, 6854],
-          chart: {
-          type: 'donut',
-          width: 500
-        },
-        labels: ['Sepeda Motor', 'Truk', 'Bus', 'Mobil Penumpang'],
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
+        series: [
+            {
+            data: [6729, 3892, 257, 5054, 82]
             }
-          }
-        }]
+        ],
+        chart: {
+            type: "bar",
+            height: 350
+        },
+        plotOptions: {
+            bar: {
+            horizontal: true,
+            distributed: true,
+            startingShape: "rounded",
+            endingShape: "rounded",
+            colors: {
+                backgroundBarColors: ["#eee"],
+                backgroundBarOpacity: 1,
+                backgroundBarRadius: 9
+            }
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        grid: {
+            yaxis: {
+            lines: {
+                show: false
+            }
+            }
+        },
+        xaxis: {
+            axisBorder: {
+            show: false
+            },
+            categories: [
+            "Sepeda Motor",
+            "Truk",
+            "Bus",
+            "Mobil Penumpang",
+            "Motor Listrik"
+            ]
+        },
+        colors: [
+            "#008FFB",
+            "#00E396",
+            "#FEB019",
+            "#FF4560",
+            "#775DD0"
+        ],
+        legend: {
+            show: false
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
+
         </script>
 </body>
 
