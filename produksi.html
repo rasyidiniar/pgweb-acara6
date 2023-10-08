@@ -49,7 +49,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Penduduk</h5>
+                <h5>Produksi Hasil Hutan Kayu</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -87,67 +87,24 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.js" integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
-            var options = {
-          series: [{
-          name: 'Jumlah Penduduk',
-          data: [37669, 37094, 32616, 78161, 46459, 41693, 51240, 44493, 51626, 83904, 47306, 33849]
-        }],
+        var options = {
+          series: [32927, 86816, 14672, 13572, 44815],
           chart: {
-          type: 'bar',
-          height: 350
+          type: 'donut',
+          width: 500
         },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '55%',
-            endingShape: 'rounded',
-            dataLabels: {
-                position: 'top',
-            }
-          },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: ['Donorojo', 'Punung', 'Pringkuku', 'Kecamatan Pacitan', 'Kebonagung', 'Arjosari', 'Nawangan', 'Bandar', 'Tegalombo', 'Tulakan', 'Ngadirojo', 'Sudimoro'
-
-          ],
-          title: {
-            text: 'Kecamatan'
-          }
-        },
-        yaxis: {
-          title: {
-            text: 'Jiwa'
-          }
-        },
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return val + " jiwa"
+        labels: ['Jati', 'Sengon', 'Pinus', 'Mahoni', 'Akasia'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
             }
           }
-        },
-        dataLabels: {
-          enabled: true,
-          formatter: function (val) {
-            return val;
-          },
-          offsetY: -20,
-          style: {
-            fontSize: '12px',
-            colors: ["#304758"]
-          }
-        },
+        }]
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
